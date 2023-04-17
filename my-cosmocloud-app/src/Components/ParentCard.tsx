@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -7,16 +7,17 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography'
 import AddBoxIcon from '@mui/icons-material/AddBox';
+import TypeOne from './TypeOne'
 
-const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-}));
+const Input = () => {
+    return <input placeholder="Your input here" />;
+};
 
 const ParentCard = () => {
+    const [inputList, setInputList] = useState([]);
+    const addType = event => {
+        setInputList(inputList.concat(<TypeOne />));
+    };
     return (
         <div>
             <Box sx={{ flexGrow: 1 }}>
@@ -24,14 +25,17 @@ const ParentCard = () => {
                     <Grid item xs={2} />
                     <Grid item xs={8} sx={{
                         marginTop: '40px',
-                        backgroundColor: '#213547',
+                        /* backgroundColor: '#213547', */
                         borderRadius: '20px'
                     }}>
                         <Stack spacing={2} direction='row'>
-                            <Typography variant="h6" color="#fff">Feild Name and Type</Typography>
-                            <Button>
-                                <AddBoxIcon sx={{ color: '#fff', fontSize: '30px' }} />
+                            <Typography variant="h6" /* color="#fff" */>Feild Name and Type</Typography>
+                            <Button onClick={addType}>
+                                <AddBoxIcon sx={{ /* color: '#fff', */ fontSize: '30px' }} />
                             </Button>
+                        </Stack>
+                        <Stack spacing={2}>
+                            {inputList}
                         </Stack>
                     </Grid>
                     <Grid item xs={2} />

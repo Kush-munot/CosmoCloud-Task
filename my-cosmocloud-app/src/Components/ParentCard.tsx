@@ -8,6 +8,7 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography'
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import TypeOne from './TypeOne'
+import Object from './Object';
 
 const Input = () => {
     return <input placeholder="Your input here" />;
@@ -25,13 +26,12 @@ const ParentCard = () => {
                     <Grid item xs={2} />
                     <Grid item xs={8} sx={{
                         marginTop: '40px',
-                        /* backgroundColor: '#213547', */
                         borderRadius: '20px'
                     }}>
                         <Stack spacing={2} direction='row'>
-                            <Typography variant="h6" /* color="#fff" */>Feild Name and Type</Typography>
+                            <Typography variant="h6">Feild Name and Type</Typography>
                             <Button onClick={addType}>
-                                <AddBoxIcon sx={{ /* color: '#fff', */ fontSize: '30px' }} />
+                                <AddBoxIcon sx={{ fontSize: '30px' }} />
                             </Button>
                         </Stack>
                         <Stack spacing={2}>

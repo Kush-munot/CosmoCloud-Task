@@ -21,7 +21,6 @@ const ParentCard = () => {
     const handleChange = (event: SelectChangeEvent) => {
         setType(event.target.value as string);
     };
-    
 
     return (
         <div>

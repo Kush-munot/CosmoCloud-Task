@@ -15,8 +15,8 @@ const Input = () => {
 };
 
 const ParentCard = () => {
-    const [inputList, setInputList] = useState([]);
-    const addType = event => {
+    const [inputList, setInputList] = useState([<Object/>]);
+    const addType = () => {
         setInputList(inputList.concat(<TypeOne />));
     };
     return (
